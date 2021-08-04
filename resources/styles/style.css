@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+
+/* Reset */
+html * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+/* Document Properties */
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.background {
+    background-image: url('../assets/daniel-jensen-Hfg3xK7KDDk-unsplash.jpg');
+    /* luca-bravo-a_hPPrncGlQ-unsplash.jpg  */
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    filter: brightness(0.9);
+}
+
+nav, main, aside {
+    z-index: 5;
+}
+
+/* Site Styles */
+
+a {
+    color: rgb(43, 42, 119);
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+}
+
+nav section {
+    display: flex;
+}
