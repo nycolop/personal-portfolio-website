@@ -22,7 +22,7 @@
 * HTML5
 * CSS3
 * JavaScript - ECMAScript6
-* Animate CSS
+* Animate CSS Library V4.1.1
 
 ## **Other Tools Used**
 * Markdown for readme

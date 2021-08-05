@@ -9,22 +9,19 @@
     <title>Nico | Personal Portfolio</title>
     <link rel="shortcut icon" href="./resources/assets/ico.svg" type="image/x-icon">
     <!-- Loads -->
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
+    <link rel="stylesheet" href="./node_modules/animate.css/animate.min.css">
     <link rel="stylesheet" href="./resources/styles/style.css">
     <script src="./resources/scripts/script.js" defer></script>
 </head>
 <body>
-    <div class="background"></div>
+    <div id="background" class="background"></div>
     <main>
         <nav>
-            <h2 class="animate__animated animate__fadeInDown"><a href="#">Home</a></h2>
+            <h2 id="home-button" class="animate__animated animate__fadeInDown"><a href="#">Home</a></h2>
             <section role="navigation" aria-label="Navigation bar">
-                <h2 class="animate__animated animate__fadeInDown"><a href="#">About me</a></h2>
-                <h2 class="animate__animated animate__fadeInDown"><a href="#">Projects</a></h2>
-                <h2 class="animate__animated animate__fadeInDown"><a href="#">Skills</a></h2>
+                <h2 id="about-button" class="animate__animated animate__fadeInDown"><a href="#">About me</a></h2>
+                <h2 id="projects-button" class="animate__animated animate__fadeInDown"><a href="#">Projects</a></h2>
+                <h2 id="skills-button" class="animate__animated animate__fadeInDown"><a href="#">Skills</a></h2>
             </section>
         </nav>
         <section id="content">
@@ -35,12 +32,7 @@
             <section id="about-me">
                 <h1>Nicolás López</h1>
                 <h2>Web developer with 1+ of experience in the area, who makes focus in:</h2>
-                <ul>
-                    <li>Accessibility</li>
-                    <li>Responsive</li>
-                    <li>Semantic</li>
-                    <li>Clean Code</li>
-                </ul>
+                <ul id="about-things"></ul>
             </section>
             <section id="projects">
                 <!-- <a href="https://necogamy.github.io/salomon-grid-flexbox-website/">Lorem ipsum dolor sit amet consectetur adipisicing elit.</a>
@@ -60,33 +52,33 @@
                 <section>
                     <article>
                         <h3>HTML5 | Accessibility | Semantic</h3>
-                        <div>85%</div>
+                        <div class="eight-five">85%</div>
                     </article>
                     <article>
                         <h3>CSS3 | Flexbox | Grid</h3>
-                        <div>85%</div>
+                        <div class="eight-three">83%</div>
                     </article>
                     <article>
                         <h3>JavaScript | ECMAScript6</h3>
-                        <div>85%</div>
+                        <div class="eight-eight">88%</div>
                     </article>
                     <article>
                         <h3>Responsive | Accessibility | Semantic | Clean Code</h3>
-                        <div>80%</div>
+                        <div class="eight">80%</div>
                     </article>
                 </section>
                 <section>
                     <article>
                         <h3>Git <span>|</span> Bash Command Line | Markdown | Google DevTools | Wireframing</h3>
-                        <div>80%</div>
+                        <div class="eight">80%</div>
                     </article>
                     <article>
                         <h3>Sass | Bootstrap</h3>
-                        <div>70%</div>
+                        <div class="seven">70%</div>
                     </article>
                     <article>
                         <h3>React & Redux | jQuery</h3>
-                        <div>50%</div>
+                        <div class="five">50%</div>
                     </article>
                 </section>
             </section>
@@ -97,7 +89,9 @@
                 <a href="https://github.com/necogamy"><img src="./resources/assets/github.svg" alt="github"></a>
                 <a href="mailto:madrazonecogamy@gmail.com"><img src="./resources/assets/gmail.svg" alt="gmail"></a>
             </section>
-            <section class="animate__animated animate__fade" id="switch" role="button" aria-label="Switch between night or day">
+            
+            <p>The actual time in my country is: </p>
+            <section id="switch" role="button" aria-label="Switch between night or day">
                 <img src="./resources/assets/moon.svg" alt="">
                 <img src="./resources/assets/sun.svg" alt="">
                 <img class="ball" src="./resources/assets/ball.svg" alt="">

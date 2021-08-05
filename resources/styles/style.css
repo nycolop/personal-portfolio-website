@@ -1,10 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap');
-/* @font-face {
-    font-family: face;
-    src: url();
-} */
-/* https://google-webfonts-helper.herokuapp.com/fonts/roboto-mono?subsets=latin */
+/* Loading Fonts */
+@font-face {
+    font-family: 'Roboto Slab';
+    font-style: normal;
+    font-weight: 300;
+    src: url('./fonts/roboto-slab/roboto-slab-v13-latin-300.eot'); /* IE9 Compat Modes */
+    src: local(''),
+    url('./fonts/roboto-slab/roboto-slab-v13-latin-300.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('./fonts/roboto-slab/roboto-slab-v13-latin-300.woff2') format('woff2'), /* Super Modern Browsers */
+    url('./fonts/roboto-slab/roboto-slab-v13-latin-300.woff') format('woff'), /* Modern Browsers */
+    url('./fonts/roboto-slab/roboto-slab-v13-latin-300.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('./fonts/roboto-slab/roboto-slab-v13-latin-300.svg#RobotoSlab') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+    font-family: 'Roboto Mono';
+    font-style: normal;
+    font-weight: 300;
+    src: url('./fonts/roboto-mono/roboto-mono-v13-latin-300.eot'); /* IE9 Compat Modes */
+    src: local(''),
+    url('./fonts/roboto-mono/roboto-mono-v13-latin-300.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('./fonts/roboto-mono/roboto-mono-v13-latin-300.woff2') format('woff2'), /* Super Modern Browsers */
+    url('./fonts/roboto-mono/roboto-mono-v13-latin-300.woff') format('woff'), /* Modern Browsers */
+    url('./fonts/roboto-mono/roboto-mono-v13-latin-300.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('./fonts/roboto-mono/roboto-mono-v13-latin-300.svg#RobotoMono') format('svg'); /* Legacy iOS */
+}
 
 /* Reset */
 html * {
@@ -15,6 +34,10 @@ html * {
 }
 
 /* Document Properties */
+:root {
+    --font-color: rgb(32, 63, 148);
+}
+
 body {
     height: 100vh;
     width: 100vw;
@@ -24,8 +47,7 @@ body {
     align-items: center;
 }
 
-.background {
-    background-image: url('../assets/daniel-jensen-Hfg3xK7KDDk-unsplash.jpg');
+#background {
     background-size: cover;
     background-repeat: no-repeat;
     width: 100vw;
@@ -35,6 +57,16 @@ body {
     top: 0;
     left: 0;
     filter: brightness(0.9);
+}
+
+.background {
+    background-image: url('../assets/daniel-jensen-Hfg3xK7KDDk-unsplash.jpg');
+    transition: 1s;
+}
+
+.background_1 {
+    background-image: url('../assets/romain.jpg');
+    transition: 1s;
 }
 
 nav, 
@@ -58,7 +90,8 @@ nav h2 {
 }
 
 nav a {
-    color: rgb(32, 63, 148);
+    color: var(--font-color);
+    transition: 1s;
     text-decoration: none;
 }
 
@@ -77,7 +110,8 @@ nav section {
 /* Content Section */
 
 #content section {
-    color: rgb(32, 63, 148);
+    color: var(--font-color);
+    transition: 1s;
 }
 #content section h1 {
     font-size: 4rem;
@@ -94,7 +128,7 @@ nav section {
     padding: 3px 0 3px 13px;
     border-radius: 6px;
     margin-top: 9px;
-    transition: all 0.5s ease-in-out;
+    transition: all 1s ease-in-out;
     width: 0;
 }
 
@@ -105,11 +139,7 @@ nav section {
 
 #skills article {
     margin-top: 20px;
-    color: rgb(29, 75, 204);
-}
-
-#skills section article:nth-child(1) div:hover {
-    width: 85%;
+    color: var(--font-color);
 }
 
 /* Projects Styles */
@@ -117,6 +147,19 @@ nav section {
     background-image: url('../assets/messagerandom.png');
     width: 100%;
     height: 100%;
+}
+
+/* About Styles */
+#about-me ul {
+    display: flex;
+    padding-top: 1.2rem;
+}
+#about-me li {
+    list-style-type: none;
+    padding: 3rem 1.5rem;
+    margin-right: 2rem;
+    border: 1px solid rgb(17, 89, 224);
+    border-radius: 50%;
 }
 
 /* Aside Styles */
@@ -150,13 +193,18 @@ aside {
 .contact a img {
     width: 9%;
     padding-right: 1.5rem;
-    filter: drop-shadow(1px 1px 25px red) invert(60%);
+    filter: drop-shadow(1px 1px 25px red) invert(65%);
+}
+
+aside p {
+    flex-grow: 1;
+    color: var(--font-color);
 }
 
 
 /* Other */
 #about-me,
-#home,
+#projects,
 #skills {
     display: none;
 }
