@@ -7,8 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Document -->
     <title>Nico | Personal Portfolio</title>
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./resources/assets/ico.svg" type="image/x-icon">
     <!-- Loads -->
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
     <link rel="stylesheet" href="./resources/styles/style.css">
     <script src="./resources/scripts/script.js" defer></script>
 </head>
@@ -16,37 +20,76 @@
     <div class="background"></div>
     <main>
         <nav>
-            <h2><a href="#">Home</a></h2>
+            <h2 class="animate__animated animate__fadeInDown"><a href="#">Home</a></h2>
             <section role="navigation" aria-label="Navigation bar">
-                <h2><a href="#">About me</a></h2>
-                <h2><a href="#">Projects</a></h2>
-                <h2><a href="#">Skills</a></h2>
+                <h2 class="animate__animated animate__fadeInDown"><a href="#">About me</a></h2>
+                <h2 class="animate__animated animate__fadeInDown"><a href="#">Projects</a></h2>
+                <h2 class="animate__animated animate__fadeInDown"><a href="#">Skills</a></h2>
             </section>
         </nav>
-        <section>
+        <section id="content">
             <section id="home">
-    
+                <h2>I'm Nico a Web Developer</h2>
+                <h3>Welcome to my Website</h3>
             </section>
             <section id="about-me">
-    
+                <h1>Nicolás López</h1>
+                <h2>Web developer with 1+ of experience in the area, who makes focus in:</h2>
+                <ul>
+                    <li>Accessibility</li>
+                    <li>Responsive</li>
+                    <li>Semantic</li>
+                    <li>Clean Code</li>
+                </ul>
             </section>
             <section id="projects">
-    
+                
             </section>
             <section id="skills">
-    
+                <section>
+                    <article>
+                        <h3>HTML5 | Accessibility | Semantic</h3>
+                        <div>85%</div>
+                    </article>
+                    <article>
+                        <h3>CSS3 | Flexbox | Grid</h3>
+                        <div>85%</div>
+                    </article>
+                    <article>
+                        <h3>JavaScript | ECMAScript6</h3>
+                        <div>85%</div>
+                    </article>
+                    <article>
+                        <h3>Responsive | Accessibility | Semantic | Clean Code</h3>
+                        <div>80%</div>
+                    </article>
+                </section>
+                <section>
+                    <article>
+                        <h3>Git <span>|</span> Bash Command Line | Markdown | Google DevTools | Wireframing</h3>
+                        <div>80%</div>
+                    </article>
+                    <article>
+                        <h3>Sass | Bootstrap</h3>
+                        <div>70%</div>
+                    </article>
+                    <article>
+                        <h3>React & Redux | jQuery</h3>
+                        <div>50%</div>
+                    </article>
+                </section>
             </section>
         </section>
         <aside>
-            <aside aria-label="contact info">
-                <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
-            </aside>
-            <section role="button" aria-label="Switch between night or day">
-    
+            <section class="contact animate__animated animate__fadeInLeft" aria-label="contact info">
+                <a href="https://www.linkedin.com/in/nicogamy"><img src="./resources/assets/linkedin.svg" alt="linkedin"></a>
+                <a href="https://github.com/necogamy"><img src="./resources/assets/github.svg" alt="github"></a>
+                <a href="mailto:madrazonecogamy@gmail.com"><img src="./resources/assets/gmail.svg" alt="gmail"></a>
+            </section>
+            <section class="animate__animated animate__fade" id="switch" role="button" aria-label="Switch between night or day">
+                <img src="./resources/assets/moon.svg" alt="">
+                <img src="./resources/assets/sun.svg" alt="">
+                <img class="ball" src="./resources/assets/ball.svg" alt="">
             </section>
         </aside>
     </main>
