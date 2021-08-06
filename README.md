@@ -28,5 +28,6 @@
 * Markdown for readme
 * Git version control
 * GitHub & GitHub pages
+* NodeJS
 * Figma for Wireframing
 * Visual Studio Code & Bash Command Line

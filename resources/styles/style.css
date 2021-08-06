@@ -25,17 +25,22 @@
     url('./fonts/roboto-mono/roboto-mono-v13-latin-300.svg#RobotoMono') format('svg'); /* Legacy iOS */
 }
 
+
 /* Reset */
 html * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Roboto Slab', sans-serif;
+    font-family: 'Roboto Mono', sans-serif;
 }
+
 
 /* Document Properties */
 :root {
-    --font-color: rgb(32, 63, 148);
+    --font-color: azure;
+    --invert: invert(1);
+    --change-all: #1d4bcc;
+    --shadow: 1px 1px 2px #000;
 }
 
 body {
@@ -59,13 +64,15 @@ body {
     filter: brightness(0.9);
 }
 
-.background {
-    background-image: url('../assets/daniel-jensen-Hfg3xK7KDDk-unsplash.jpg');
+/* Night Theme */
+.night_background {
+    background-image: url('../assets/images/night.jpg');
     transition: 1s;
 }
 
-.background_1 {
-    background-image: url('../assets/romain.jpg');
+/* Day Theme */
+.day_background {
+    background-image: url('../assets/images/day.jpg');
     transition: 1s;
 }
 
@@ -75,6 +82,7 @@ aside {
     z-index: 5;
 }
 
+
 /* Site Styles */
 main {
     height: 85%;
@@ -83,6 +91,7 @@ main {
     flex-direction: column;
     justify-content: space-between;
 }
+
 
 /* Nav Styles */
 nav h2 {
@@ -107,6 +116,7 @@ nav section {
     margin-right: 8%;
 }
 
+
 /* Content Section */
 
 #content section {
@@ -120,9 +130,10 @@ nav section {
     font-size: 3rem;
 }
 
+
 /* Skills Section */
 #skills div {
-    background-color: rgb(29, 75, 204);
+    background-color: var(--change-all);
     color: white;
     display: block;
     padding: 3px 0 3px 13px;
@@ -142,12 +153,10 @@ nav section {
     color: var(--font-color);
 }
 
+
 /* Projects Styles */
-#projects article {
-    background-image: url('../assets/messagerandom.png');
-    width: 100%;
-    height: 100%;
-}
+
+
 
 /* About Styles */
 #about-me ul {
@@ -158,9 +167,10 @@ nav section {
     list-style-type: none;
     padding: 3rem 1.5rem;
     margin-right: 2rem;
-    border: 1px solid rgb(17, 89, 224);
+    border: 1px solid var(--change-all);
     border-radius: 50%;
 }
+
 
 /* Aside Styles */
 aside {
@@ -170,7 +180,8 @@ aside {
 }
 
 #switch {
-    border: 2px solid rgb(32, 63, 148);
+    transition: 1s;
+    border: 2px solid var(--change-all);
     border-radius: 20px;
     width: 70px;
     position: relative;
@@ -193,12 +204,36 @@ aside {
 .contact a img {
     width: 9%;
     padding-right: 1.5rem;
-    filter: drop-shadow(1px 1px 25px red) invert(65%);
+    filter: var(--invert);
+    transition: 1s;
 }
 
-aside p {
-    flex-grow: 1;
-    color: var(--font-color);
+
+/* Home Styles */
+.cursor {
+    display: inline-block;
+    width: 3px;
+    background-color: #ccc;
+    margin-left: 0.1rem;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0% {
+        background-color: #ccc;
+    }
+    49% {
+        background-color: #ccc;
+    }
+    50% {
+        background-color: transparent;
+    }
+    99% {
+        background-color: transparent;
+    }
+    100% {
+        background-color: #ccc;
+    }
 }
 
 
@@ -208,3 +243,22 @@ aside p {
 #skills {
     display: none;
 }
+
+nav h2, 
+#content section h2 {
+    text-shadow: var(--shadow);
+}
+
+/* Low resolution */
+@media screen and (min-resolution: 130dpi) {
+    .night_background {
+        background-image: url('../assets/images/night-high-resolution.jpg');
+    }
+    .day_background {
+        background-image: url('../assets/images/day-high-resolution.jpg');
+    }
+}
+
+/* Devices */
+/* Tablet */
+/* Smartphone */

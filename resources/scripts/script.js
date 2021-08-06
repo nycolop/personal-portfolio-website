@@ -31,6 +31,7 @@ function actual(tracker) {
 function inject() {
     let names = ['Accessibility', 'Responsive', 'Semantic', 'Clean Code'];
     let obj = {};
+    let delay = 1500;
 
     for (let i = 1; i <= 4; i++) {
         let li = `li_${i}`;
@@ -47,19 +48,19 @@ function inject() {
 
     setTimeout(() => {
         aboutThings.appendChild(obj.li_1);
-    }, 1500);
+    }, delay);
 
     setTimeout(() => {
         aboutThings.appendChild(obj.li_2);
-    }, 3000);
+    }, delay * 2);
     
     setTimeout(() => {
         aboutThings.appendChild(obj.li_3);
-    }, 4500);
+    }, delay * 3);
 
     setTimeout(() => {
         aboutThings.appendChild(obj.li_4);
-    }, 6000);
+    }, delay * 4);
 }
 
 function growItems() {
@@ -109,6 +110,8 @@ function growItems() {
     }
 }
 
+
+// Events Listeners of the nav
 aboutButton.addEventListener('click', inject);
 
 homeButton.onclick = () => {
@@ -149,6 +152,8 @@ skillsButton.onclick = () => {
 }
 
 
+
+// Switch from day to night
 let switcher = document.getElementById('switch');
 let trackerSwitcher = 1;
 switcher.onclick = () => {
@@ -162,17 +167,67 @@ switcher.onclick = () => {
         ball.style.left = '30px';
         trackerSwitcher = 2;
 
-        // Theme changer
-        background.setAttribute('class', 'background_1');
-        root.style.setProperty('--font-color', 'azure');
+        // Theme changer to day
+        background.setAttribute('class', 'day_background');
+        root.style.setProperty('--font-color', '#131313');
+        root.style.setProperty('--invert', 'invert(0.5)');
+        root.style.setProperty('--change-all', '#131313');
+        root.style.setProperty('--shadow', '0px 0px 0px #000');
     } else if (trackerSwitcher === 2) {
         // Ball effect
         ball.style.transition = '1s';
         ball.style.left = '0';
         trackerSwitcher = 1;
 
-        // Theme changer
-        background.setAttribute('class', 'background');
-        root.style.setProperty('--font-color', 'rgb(32, 63, 148)');
+        // Theme changer to night
+        background.setAttribute('class', 'night_background');
+        root.style.setProperty('--font-color', 'azure');
+        root.style.setProperty('--invert', 'invert(1)');
+        root.style.setProperty('--change-all', '#1d4bcc');
+        root.style.setProperty('--shadow', '#000');
     }
 };
+
+
+
+// Typing effect
+const typedTextSpan = document.querySelector('.typed-text')
+const cursorSpan = document.querySelector('.cursor');
+
+const words = ['Web Developer', 'Programmer'];
+const typingDelay = 200;
+const erasingDelay = 100;
+const newTextDelay = 2000;
+const eraseWordDelay = 800;
+let textArrayIndex = 0;
+let charIndex = 0;
+
+function typing() {
+    if (charIndex < words[textArrayIndex].length) {
+        if(!cursorSpan.classList.contains('typing')) cursorSpan.classList.add('typing');
+        typedTextSpan.textContent += words[textArrayIndex].charAt(charIndex);
+        charIndex++;
+        setTimeout(typing, typingDelay);
+    } else {
+        cursorSpan.classList.remove('typing');
+        setTimeout(erasing, eraseWordDelay);
+    }
+}
+
+function erasing() {
+    if(charIndex > 0) {
+        if(!cursorSpan.classList.contains('typing')) cursorSpan.classList.add('typing');
+        typedTextSpan.textContent = words[textArrayIndex].substring(0, charIndex - 1);
+        charIndex--;
+        setTimeout(erasing, erasingDelay);
+    } else {
+        cursorSpan.classList.remove('typing');
+        textArrayIndex++;
+        if (textArrayIndex>=words.length) textArrayIndex = 0;
+        setTimeout(typing, typingDelay + 1100);
+    }
+}
+
+window.addEventListener('load', () => {
+    if(words.length) setTimeout(typing, newTextDelay + 250);
+})
