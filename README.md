@@ -1,11 +1,11 @@
 # **Personal Portfolio Website**
 ## **This is my personal portfolio website where I will show my projects and other stuff**
-### [Here you can see this website]()
+### [Here you can see this website](https://necogamy.github.io/personal-portfolio-website/)
 
 <br>
 
 ## **Overview**
-![screenshot](./screenshot.jpg)
+![screenshot](./screenshot.png)
 
 ## **Features**
 * Fully Responsive for three devices (Desktop, Tablet and Smartphone devices)
