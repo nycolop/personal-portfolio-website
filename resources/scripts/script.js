@@ -135,7 +135,7 @@ projectsButton.onclick = () => {
     if (tracker !== 3) {
         actual(tracker);
         projects.classList.add('animate__animated', 'animate__fadeInLeft');
-        projects.style.display = 'block';
+        projects.style.display = 'grid';
         tracker = 3;
     }
 }
@@ -170,7 +170,7 @@ switcher.onclick = () => {
         // Theme changer to day
         background.setAttribute('class', 'day_background');
         root.style.setProperty('--font-color', '#131313');
-        root.style.setProperty('--invert', 'invert(0.5)');
+        root.style.setProperty('--invert', 'invert(0.4)');
         root.style.setProperty('--change-all', '#131313');
         root.style.setProperty('--shadow', '0px 0px 0px #000');
     } else if (trackerSwitcher === 2) {

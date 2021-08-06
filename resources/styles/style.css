@@ -155,7 +155,51 @@ nav section {
 
 
 /* Projects Styles */
+#projects a {
+    width: 80%;
+    text-decoration: none;
+    color: var(--font-color);
+    font-size: 1.1rem;
+}
 
+#projects img {
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid var(--font-color);
+}
+
+#projects {
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 1fr 1fr;
+    grid-gap: 20px;
+    justify-items: center;
+    align-items: stretch;
+}
+
+#projects a:nth-child(1) {
+    grid-column-start: 1;
+    grid-row-start: 1;
+}
+#projects a:nth-child(2) {
+    grid-column-start: 2;
+    grid-row-start: 1;
+}
+#projects a:nth-child(3) {
+    grid-column-start: 3;
+    grid-row-start: 1;
+}
+#projects a:nth-child(4) {
+    grid-column-start: 1;
+    grid-row-start: 2;
+}
+#projects a:nth-child(5) {
+    grid-column-start: 2;
+    grid-row-start: 2;
+}
+#projects a:nth-child(6) {
+    grid-column-start: 3;
+    grid-row-start: 2;
+}
 
 
 /* About Styles */
@@ -249,7 +293,7 @@ nav h2,
     text-shadow: var(--shadow);
 }
 
-/* Low resolution */
+/* High Resolution */
 @media screen and (min-resolution: 130dpi) {
     .night_background {
         background-image: url('../assets/images/night-high-resolution.jpg');
@@ -261,4 +305,98 @@ nav h2,
 
 /* Devices */
 /* Tablet */
+@media screen and (max-width: 820px) {
+    .contact a img {
+        width: 11%;
+    }
+    #switch {
+        flex-grow: 1;
+    }
+    #content section h1 {
+        font-size: 2rem;
+    }
+    #content section h2 {
+        font-size: 1rem;
+    }
+
+    #about-me ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #about-me li {
+        padding: 1.3rem 1.3rem;
+    }
+
+    #about-me li {
+        margin-top: 1rem;
+    }
+
+    #skills {
+        flex-direction: column;
+    }
+
+    #home h2 {
+        font-size: 2rem !important;
+    }
+}
 /* Smartphone */
+@media screen and (max-width: 480px) {
+    #skills article {
+        margin-top: 10px;
+    }
+
+    .contact a img {
+        width: 20%;
+    }
+
+    #projects {
+        grid-gap: 55px 5px;
+    }
+
+    #projects img {
+        width: 100%;
+    }
+    
+    #projects a {
+        width: 90%;
+    }
+
+    nav h2 {
+        font-size: 1rem;
+    }
+    
+    nav section {
+        justify-content: space-evenly;
+        width: 250px;
+        margin-right: 10%;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    #skills article {
+        margin-top: 10px;
+    }
+
+    .contact a img {
+        width: 20%;
+    }
+
+    #projects {
+        grid-gap: 55px 5px;
+    }
+
+    #projects img {
+        width: 70%;
+    }
+    
+    #projects a {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .optime {
+        display: none;
+    }
+}
